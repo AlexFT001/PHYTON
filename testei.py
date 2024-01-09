@@ -1,4 +1,4 @@
-import url, time, requests
+import time, requests
 from bs4 import BeautifulSoup
 
 def findYT(search):
@@ -14,9 +14,13 @@ def findYT(search):
     if search_result.status_code == 200:
         soup = BeautifulSoup(search_result.text, 'html.parser')
 
-        videos = soup.select(".yt-uix-tile-link")
+        videos = soup.select('a',attrs={'class':'yt-uix-tile-link'})
 
-        print(soup)
+        videolist=[]
+        for v in videos:
+            tmp = 'https://www.youtube.com' + v['href']
+            videolist.append(tmp)
+            print(videolist)
     else:
         print(f"Failed to retrieve page. Status code: {search_result.status_code}")
 

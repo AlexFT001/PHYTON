@@ -1,0 +1,1 @@
+words = ["comi o cu de quem esta lendo"]
