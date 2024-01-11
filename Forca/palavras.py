@@ -1,1 +1,1 @@
-words = ["comi o cu de quem esta lendo"]
+words = ["bom dia", "flor do dia", "assim", "voce"]
